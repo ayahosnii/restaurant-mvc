@@ -1,0 +1,21 @@
+{
+  "name": "zubair/php-migrations",
+  "description": "A simple tutorial on how to use and manage migrations in PHP applications.",
+  "type": "project",
+  "require": {
+    "robmorgan/phinx": "^0.13.4",
+    "ext-pdo": "*"
+  },
+  "license": "ISC",
+  "autoload": {
+    "psr-4": {
+      "Zubs\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Zubs",
+      "email": "zubairidrisaweda@gmail.com"
+    }
+  ]
+}
