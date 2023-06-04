@@ -37,15 +37,15 @@
             </tr>
             </thead>
             <tbody>
-            <?php if (!empty($privileges)): ?>
-              <?php foreach ($privileges as $privilege): ?>
-                <?php if (is_object($privilege)): ?>
+            <?php if (!empty($menus)): ?>
+              <?php foreach ($menus as $menu): ?>
+                <?php if (is_object($menu)): ?>
                   <tr>
-                    <td><?= $privilege->Privilege ?></td>
-                    <td><?= $privilege->PrivilegeTitle ?></td>
+                    <td><?= $menu->item_name ?></td>
+                    <td><?= $menu->price ?> $</td>
                     <td>
-                      <a href="/privileges/edit/"><i class="fa fa-edit"></i></a>
-                      <a href="/privileges/delete/"><i class="fa fa-trash"></i></a>
+                      <a href="/admin/menus/edit/<?= $menu->id ?>"><i class="fa fa-edit"></i></a>
+                      <a href="/admin/menus/delete/<?= $menu->id ?>" onclick="if(!confirm('<?= $text_table_control_delete_confirm ?>')) return false;"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endif; ?>

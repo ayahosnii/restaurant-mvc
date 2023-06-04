@@ -54,6 +54,7 @@ class Messenger
     $msgs = $this->_session->messages;
     $msgs[] = [$message, $type];
     $this->_session->messages = $msgs;
+    var_dump($message);
   }
 
   // Check if messages exist in the session

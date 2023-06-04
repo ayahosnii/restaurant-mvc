@@ -11,8 +11,6 @@ class FileUpload
   private $tmpPath;
 
   private $fileExtension;
-  private static $salt = '$2a$07$yeNCSNwRpYopOhv0TrrReP$';
-
 
   private $allowedExtensions = [
     'jpg', 'png', 'gif', 'pdf', 'doc', 'docx', 'xls'
@@ -21,29 +19,25 @@ class FileUpload
   public function __construct(array $file)
   {
     $this->name = $file['name'];
+    var_dump($this->name);
     $this->type = $file['type'];
     $this->size = $file['size'];
+    var_dump($this->size);
     $this->error = $file['error'];
+    var_dump($this->error);
     $this->tmpPath = $file['tmp_name'];
     $this->name();
   }
 
   private function name()
   {
-    // Generate a base64-encoded string from the file name and salt.
-    $base64String = base64_encode($this->name . self::$salt);
-
-    // Truncate the string to 30 characters.
-    $name = substr($base64String, 0, 30);
-
-    // Replace every 6 characters with an underscore.
-    $name = preg_replace('/(\w{6})/', '$1_', $name);
-
-    // Remove any trailing underscores.
+    preg_match_all('/([a-z]{1,4})$/i', $this->name, $m);
+    $this->fileExtension = $m[0][0];
+    $name = substr(strtolower(base64_encode($this->name . APP_SALT)), 0, 30);
+    $name = preg_replace('/(\w{6})/i', '$1_', $name);
     $name = rtrim($name, '_');
-
-    // Return the file name.
-    return $name . $this->fileExtension;
+    $this->name = $name;
+    return $name;
   }
 
   private function isAllowedType()
@@ -84,6 +78,7 @@ class FileUpload
       if(is_writable($storageFolder)) {
         move_uploaded_file($this->tmpPath, $storageFolder . DS . $this->getFileName());
       } else {
+        var_dump($storageFolder);
         throw new \Exception('Sorry the destination folder is not writable');
       }
     }
