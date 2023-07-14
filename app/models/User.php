@@ -1,5 +1,5 @@
 <?php
-namespace estore\app\models;
+namespace app\models;
 
 class User extends AbstractModel
 {
