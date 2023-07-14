@@ -16,12 +16,12 @@ class MenuController extends AbstractController
         $this->language->load('index.default');
 
 
-//        $appetizers  = new Appetizers();
-//        $this->_data['appetizers']  = $appetizers->display();
-//        var_dump($this->_data['appetizers']);
-//
-//        $pasta  = new Pasta();
-//        $this->_data['pastas']  = $pasta->display();
+        $appetizers  = new Appetizers();
+        $this->_data['appetizers']  = $appetizers->display();
+        var_dump($this->_data['appetizers']);
+
+        $pasta  = new Pasta();
+        $this->_data['pastas']  = $pasta->display();
 
         $this->_view();
     }

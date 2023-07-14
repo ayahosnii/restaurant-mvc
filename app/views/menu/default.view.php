@@ -53,28 +53,28 @@
     </div>
     <h3><span class="style-change">Appetizers</span></h3>
     <div class="row">
-      <?php if (!empty($appetizers)): ?>
-      <?php foreach ($appetizers as $appetizer): ?>
-          <?php if (is_object($appetizer)): ?>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food">
-          <div class="food-img">
-            <img src="<?= $appetizer->image ?>" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5><?= $appetizer->item_name ?></h5>
-              <span class="style-change">$<?= $appetizer->price ?></span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php else: ?>
-        No appetizer found.
-      <?php endif; ?>
+<!--      --><?php //if (!empty($appetizers)): ?>
+<!--      --><?php //foreach ($appetizers as $appetizer): ?>
+<!--          --><?php //if (is_object($appetizer)): ?>
+<!--      <div class="col-md-4 col-sm-6">-->
+<!--        <div class="single-food">-->
+<!--          <div class="food-img">-->
+<!--            <img src="--><?php //= $appetizer->image ?><!--" class="img-fluid" alt="">-->
+<!--          </div>-->
+<!--          <div class="food-content">-->
+<!--            <div class="d-flex justify-content-between">-->
+<!--              <h5>--><?php //= $appetizer->item_name ?><!--</h5>-->
+<!--              <span class="style-change">$--><?php //= $appetizer->price ?><!--</span>-->
+<!--            </div>-->
+<!--            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--          --><?php //endif; ?>
+<!--        --><?php //endforeach; ?>
+<!--      --><?php //else: ?>
+<!--        No appetizer found.-->
+<!--      --><?php //endif; ?>
     </div>
   </div>
 </section>
