@@ -46,90 +46,33 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food">
-          <div class="food-img">
-            <img src="assets/images/food1.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>Mexican Eggrolls</h5>
-              <span class="style-change">$14.50</span>
+
+      <?php if (!empty($menus)): ?>
+        <?php foreach ($menus as $menu): ?>
+          <?php if (is_object($menu)): ?>
+            <div class="col-md-4 col-sm-6">
+              <div class="single-food">
+                <div class="food-img">
+                  <img src="uploads/images/<?= $menu->image ?>" class="img-fluid" alt="">
+                </div>
+                <div class="food-content">
+                  <div class="d-flex justify-content-between">
+                    <h5><?=$menu->item_name?></h5>
+                    <span class="style-change"><?= $menu->price ?> LE</span>
+                  </div>
+                  <p class="pt-3"><?= $menu->description ?></p>
+                </div>
+              </div>
             </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food mt-5 mt-sm-0">
-          <div class="food-img">
-            <img src="assets/images/food2.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>chicken burger</h5>
-              <span class="style-change">$9.50</span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food mt-5 mt-md-0">
-          <div class="food-img">
-            <img src="assets/images/food3.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>topu lasange</h5>
-              <span class="style-change">$12.50</span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food mt-5">
-          <div class="food-img">
-            <img src="assets/images/food4.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>pepper potatoas</h5>
-              <span class="style-change">$14.50</span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food mt-5">
-          <div class="food-img">
-            <img src="assets/images/food5.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>bean salad</h5>
-              <span class="style-change">$8.50</span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="single-food mt-5">
-          <div class="food-img">
-            <img src="assets/images/food6.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="food-content">
-            <div class="d-flex justify-content-between">
-              <h5>beatball hoagie</h5>
-              <span class="style-change">$11.50</span>
-            </div>
-            <p class="pt-3">Face together given moveth divided form Of Seasons that fruitful.</p>
-          </div>
-        </div>
-      </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <tr>
+          <td colspan="3">No privileges found.</td>
+        </tr>
+      <?php endif; ?>
+
+
     </div>
   </div>
 </section>

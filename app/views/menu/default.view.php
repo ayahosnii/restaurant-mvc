@@ -53,13 +53,10 @@
     </div>
     <h3><span class="style-change">Appetizers</span></h3>
     <div class="row">
-      <?php if (!empty($appetizers)): ?>
-      <?php foreach ($appetizers as $appetizer): ?>
-          <?php if (is_object($appetizer)): ?>
       <div class="col-md-4 col-sm-6">
         <div class="single-food">
           <div class="food-img">
-            <img src="<?= $appetizer->image ?>" class="img-fluid" alt="">
+            <img src="uploads/images/<?= $appetizer->image ?>" class="img-fluid" alt="">
           </div>
           <div class="food-content">
             <div class="d-flex justify-content-between">
@@ -70,11 +67,6 @@
           </div>
         </div>
       </div>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php else: ?>
-        No appetizer found.
-      <?php endif; ?>
     </div>
   </div>
 </section>

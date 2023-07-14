@@ -3,6 +3,7 @@
 namespace app\controllers\front;
 
 use app\controllers\AbstractController;
+use app\models\admin\Menu;
 
 class IndexController extends AbstractController
 {
@@ -14,7 +15,11 @@ class IndexController extends AbstractController
         var_dump($this->session->messages);
         $this->language->load('template.common');
         $this->language->load('index.default');
-        $this->_view();
+
+      $this->_data['menus'] = Menu::getAll();
+
+      var_dump($this->_data['menus']);
+      $this->_view();
     }
 
     public function addAction()
