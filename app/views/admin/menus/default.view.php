@@ -21,7 +21,7 @@
   <section class="content">
     <div class="container">
       <div class="col-md-2 my-2">
-        <a href="/admin/privileges/create" class="btn btn-block btn-success"><i class="fa fa-plus"></i> <?= $text_new_item ?></a>
+        <a href="/admin/menus/create" class="btn btn-block btn-success"><i class="fa fa-plus"></i> <?= $text_new_item ?></a>
       </div>
       <div class="card">
         <div class="card-header">

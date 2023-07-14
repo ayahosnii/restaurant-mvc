@@ -13,5 +13,6 @@ $_['text_users_privileges'] = 'الصلاحيات';
 $_['text_overview'] = 'الملخص';
 $_['text_reservations'] = 'أصناف المنتجات';
 $_['text_categories'] = 'الاقسام';
+$_['text_meals'] = 'الوجبات';
 $_['text_customer_feedback'] = 'ملاحظات العملاء';
 $_['text_staff_management'] = 'إدارة الموظفين';

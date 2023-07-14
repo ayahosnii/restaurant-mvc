@@ -90,6 +90,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="/admin/menus" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+              <?=$text_meals?>
+            </p>
+          </a>
+        </li>
+       <!-- <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tree"></i>
             <p>
@@ -211,7 +219,7 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li>-->
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

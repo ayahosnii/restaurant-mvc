@@ -23,6 +23,7 @@ final class MenuTableMigration extends AbstractMigration
       ->addColumn('price', 'decimal', ['precision' => 10, 'scale' => 2])
       ->addColumn('image', 'string', ['limit' => 255, 'null' => true])
       ->addColumn('category_id', 'integer', ['signed' => false, 'null' => true])
+      ->addColumn('type', 'string', ['limit' => 255]) // Add the "type" column
       ->addForeignKey('category_id', 'categories', 'id', ['delete' => 'SET_NULL', 'update' => 'CASCADE'])
       ->addColumn('created_at', 'datetime')
       ->addColumn('updated_at', 'datetime', ['null' => true])
