@@ -18,6 +18,7 @@ class MenuController extends AbstractController
 
         $appetizers  = new Appetizers();
         $this->_data['appetizers']  = $appetizers->display();
+        var_dump($this->_data['appetizers']);
 
         $pasta  = new Pasta();
         $this->_data['pastas']  = $pasta->display();
