@@ -25,4 +25,6 @@ class Menu extends AbstractModel
   );
 
   protected static $primaryKey = 'id';
+  protected static $foreignKey = 'category_id';
+
 }

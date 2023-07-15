@@ -109,7 +109,23 @@ class AbstractModel
         return false;
     }
 
-    public static function getBy($columns, $options = array())
+  public static function getByForeignKey($fk)
+  {
+    $sql = 'SELECT * FROM ' . static::$tableName . ' WHERE ' . static::$foreignKey . ' = "' . $fk . '"';
+    var_dump($sql);
+    $stmt = DatabaseHandler::factory()->prepare($sql);
+    $stmt->execute();
+    if(method_exists(get_called_class(), '__construct')) {
+      $results = $stmt->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema));
+    } else {
+      $results = $stmt->fetchAll(PDO::FETCH_CLASS, get_called_class());
+    }
+    return (is_array($results) && !empty($results)) ? $results : false;
+  }
+
+
+
+  public static function getBy($columns, $options = array())
     {
         $whereClauseColumns = array_keys($columns);
         $whereClauseValues = array_values($columns);

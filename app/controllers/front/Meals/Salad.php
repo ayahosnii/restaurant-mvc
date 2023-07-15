@@ -4,9 +4,9 @@ namespace app\controllers\front\Meals;
 
 use app\models\admin\Menu;
 
-class Sides extends Meals
+class Salad extends Meals
 {
-  public $categoryId = 4;
+  public $categoryId = 5;
   public function display()
   {
     return $this->meal;

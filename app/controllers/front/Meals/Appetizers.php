@@ -7,15 +7,10 @@ use app\models\admin\Menu;
 class Appetizers extends Meals
 {
   public $categoryId = 1;
+
   public function display()
   {
-    return Menu::getByPK($this->categoryId);
+    return $this->meal;
   }
-
-  public function getName(): string
-  {
-    return $this->display()->item_name;
-  }
-
 
 }

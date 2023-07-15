@@ -9,13 +9,7 @@ class Burger extends Meals
   public $categoryId = 2;
   public function display()
   {
-    return Menu::getByPK($this->categoryId);
+    return $this->meal;
   }
-
-  public function getName(): string
-  {
-    return $this->display()->item_name;
-  }
-
 
 }

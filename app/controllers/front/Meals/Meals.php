@@ -32,32 +32,10 @@ class Meals
   /**
    * @return string
    */
-  public function getName(): string
+
+  public function __construct()
   {
-    return $this->name;
+    $this->meal = Menu::getByForeignKey($this->categoryId);
   }
 
-  /**
-   * @return float
-   */
-  public function getPrice(): float
-  {
-    return $this->price;
-  }
-
-  /**
-   * @return string
-   */
-  public function getDescription(): string
-  {
-    return $this->description;
-  }
-
-  /**
-   * @return int
-   */
-  public function getCategory(): int
-  {
-    return $this->categoryId;
-  }
 }
